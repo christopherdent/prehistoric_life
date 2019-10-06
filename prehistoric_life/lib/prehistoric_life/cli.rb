@@ -19,7 +19,7 @@ class PrehistoricLife::CLI
    cretaceous = PrehistoricLife::Period.new("Cretaceous")
     #@periods = ["Triassic (250-206 million years ago)", "Jurassic (206-144 million years ago)", "Cretaceous (144-65 million years ago)"]
     @periods = PrehistoricLife::Period.all  
-     binding.pry 
+      
     puts "Please choose your time period:"
       @periods.each_with_index do |period, index|
       index += 1
@@ -43,6 +43,9 @@ class PrehistoricLife::CLI
 
   def show_triassic_creatures
     puts "These are a few of the major animals from the Triassic period."
+    
+    PrehistoricLife::Scraper.triassic_scraper
+    
     #PrehistoricLife::Triassic.all.each do |animal|
     #puts animal.name 
     

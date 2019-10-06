@@ -2,6 +2,7 @@
 require_relative "./prehistoric_life/version"
 require_relative "prehistoric_life/cli"
 require_relative "prehistoric_life/period"
+require_relative "prehistoric_life/scraper"
 require 'pry'
 
 module PrehistoricLife
