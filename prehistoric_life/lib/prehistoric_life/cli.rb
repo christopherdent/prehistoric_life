@@ -42,7 +42,8 @@ class PrehistoricLife::CLI
 
 
   def show_triassic_creatures
-    puts "These are a few of the major animals from the Triassic period."
+    puts "These are a few of the major animals from the Triassic period."  
+    puts "Select one to learn a fun fact!"
     
     PrehistoricLife::Scraper.triassic_scraper
     
@@ -54,10 +55,14 @@ class PrehistoricLife::CLI
     
   def show_jurassic_creatures 
     puts "These are a few of the major animals from the Jurassic period."
+    puts "Select one to learn a fun fact!"
+    PrehistoricLife::Scraper.jurassic_scraper
   end
     
   def show_cretaceous_creatures
-     puts "These are a few of the major animals from the Cretaceous period."
+     puts "These are a few of the major animals from the Cretaceous period." 
+     puts "Select one to learn a fun fact!"
+     PrehistoricLife::Scraper.cretaceous_scraper
   end 
 
 end 
