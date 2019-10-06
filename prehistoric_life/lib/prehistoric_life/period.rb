@@ -1,3 +1,5 @@
+require 'pry'
+
 class PrehistoricLife::Period
   attr_accessor :name, :years 
   

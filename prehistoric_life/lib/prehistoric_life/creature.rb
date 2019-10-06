@@ -1,13 +1,14 @@
- 
+  
 require 'pry'
 
 
 class PrehistoricLife::Creature
-  attr_reader :type, :diet 
+  attr_accessor :name, :type, :diet 
   
   @@all = [] 
   def initialize(name)
     @name = name 
+     
     save 
   end 
   
@@ -19,8 +20,16 @@ class PrehistoricLife::Creature
     @@all << self 
   end 
   
-  def self.roar 
-    puts "Roar"
+  def roar 
+    puts "#{self.name} goes Roar!"
+  end 
+  
+  def fun_fact 
+    
+  end 
+  
+  def diet 
+    
   end 
   
 end 
