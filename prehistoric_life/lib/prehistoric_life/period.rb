@@ -19,7 +19,12 @@ class PrehistoricLife::Period
   def years
   
     if self.name == "Triassic"
-    "10 years"
+    "250-206 million years ago"
+    elsif self.name == "Jurassic"
+    "206-144 million years ago"
+    elsif self.name == "Cretaceous"
+    "144-65 million years ago"
+    
   end 
 end 
     
