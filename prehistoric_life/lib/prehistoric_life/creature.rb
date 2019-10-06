@@ -61,7 +61,7 @@ class PrehistoricLife::Creature
         
       when "Parasaurolophus"
         
-      when  "Oviraptor"
+      when "Oviraptor"
         
       when "Spinosaurus"
         

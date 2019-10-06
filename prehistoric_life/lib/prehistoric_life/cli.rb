@@ -1,7 +1,10 @@
 require 'pry'
 class PrehistoricLife::CLI
+  attr_accessor :creature 
 
-
+  def initialize
+    @creature = creature 
+  end 
 
   def call 
      puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!"
@@ -44,13 +47,19 @@ class PrehistoricLife::CLI
   def show_triassic_creatures
     puts "These are a few of the major animals from the Triassic period."  
     puts "Select one to learn a fun fact!"
+    PrehistoricLife::Scraper.triassic_scraper  #you need to link the index from this to the next line somehow 
+    input = gets.strip 
+     
     
-    PrehistoricLife::Scraper.triassic_scraper
+    PrehistoricLife::Creature.all.each.with_index do |creature|
+      creature.roar 
+      creature.fun_fact 
+     
+    end 
     
-    #PrehistoricLife::Triassic.all.each do |animal|
-    #puts animal.name 
-    
-    #end 
+    #if input == 1
+      
+     
   end 
     
   def show_jurassic_creatures 

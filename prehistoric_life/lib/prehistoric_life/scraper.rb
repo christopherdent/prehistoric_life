@@ -12,15 +12,15 @@ class PrehistoricLife::Scraper
     doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
     name = type.text 
     puts "#{index}. #{name}"
-    @dino = PrehistoricLife::Creature.new(name) #<-- this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name.  maybe so i could do creaturename.diet or creaturename.funfact 
+    @dino = PrehistoricLife::Creature.new(name) #<-- this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name.  maybe so i could do creaturename.fun_fact 
     #the instance variable above allows us to use .roar (and other creature instance methods)
     #if they select 1. eoraptor they will get more info about the selecteed object / creature.  
     #end 
    
    end 
-   binding.pry 
+  
   end
-
+ 
   
   def self.jurassic_scraper
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Jurassic"))
@@ -40,6 +40,9 @@ class PrehistoricLife::Scraper
   end 
   
   
+  def self.dino 
+    @dino 
+  end 
  
     
   
