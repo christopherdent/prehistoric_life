@@ -8,6 +8,7 @@
     -User is asked for a time period 
     -User sees a sample of life from that era and is asked to select one for a fun fact 
     -fun fact then appears 
+OR  have creatures initialize as objects.  Then you can see their diet and the fun fact acting on the object not the string.  i think this is actually going to be the way to go  
     
 
 2.  Classes 
@@ -23,4 +24,4 @@
       
       CLI class will welcome to an app 
       
-3.  Will try to use https://www.thoughtco.com/the-three-ages-of-dinosaurs-1091932 as a source as opposed to wikipedia.  
+3.  using dino.wikia.org 
