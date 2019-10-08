@@ -26,9 +26,23 @@ class PrehistoricLife::Creature
   
   
   def fun_fact
+    
+  
     case @name 
       when "Eoraptor"
-        puts "I eat meat!"
+        
+        doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Triassic"))
+        
+        
+        array = doc.css('a')          
+        array.each do |element| element["href"]
+        binding.pry 
+        end.compact
+        
+        
+        # puts "I eat meat!"
+            
+     #######stuck here, trying to extract url 
       
       when "Procompsognathus"
         puts "I eat meat and I'm g onna show you a fun fact."
@@ -81,6 +95,6 @@ class PrehistoricLife::Creature
     
   end 
   
+  
 end 
-
  
