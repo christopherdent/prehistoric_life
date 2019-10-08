@@ -50,14 +50,18 @@ class PrehistoricLife::CLI
     PrehistoricLife::Scraper.triassic_scraper  #you need to link the index from this to the next line somehow 
     input = gets.strip 
      
+     
+      
     
-    PrehistoricLife::Creature.all.each.with_index do |creature|
+    PrehistoricLife::Creature.all.each.with_index do |creature, index|
+     index +=1 
+     if input.to_i == index 
       creature.roar 
       creature.fun_fact 
-     
-    end 
+     end 
+   end
     
-    #if input == 1
+    
       
      
   end 
