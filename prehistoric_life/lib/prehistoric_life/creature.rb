@@ -31,21 +31,15 @@ class PrehistoricLife::Creature
     case @name 
       when "Eoraptor"
         
-        doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Triassic"))
-        
-        
-        array = doc.css('a')          
-        array.each do |element| element["href"]
+        doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
+        fact = doc.css("div.mw-content-ltr.mw-content-text p") 
         binding.pry 
-        end.compact
-        
-        
-        # puts "I eat meat!"
-            
+        puts fact.text 
+      
      #######stuck here, trying to extract url 
       
       when "Procompsognathus"
-        puts "I eat meat and I'm g onna show you a fun fact."
+        puts "I eat meat and Im g onna show you a fun fact."
         
       when "Coelophysis"
         
