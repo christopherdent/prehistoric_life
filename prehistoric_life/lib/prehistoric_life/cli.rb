@@ -49,35 +49,45 @@ class PrehistoricLife::CLI
     puts "Select one to learn a fun fact!"
     PrehistoricLife::Scraper.triassic_scraper  #you need to link the index from this to the next line somehow 
     input = gets.strip 
-     
-     
-      
-    
     PrehistoricLife::Creature.all.each.with_index do |creature, index|
-     index +=1 
-     if input.to_i == index 
-      creature.roar 
-      creature.fun_fact 
-     end 
-   end
+      index +=1 
+      if input.to_i == index 
+        creature.roar 
+        creature.fun_fact 
+      end 
+    end
     
-    
-      
-     
   end 
     
   def show_jurassic_creatures 
     puts "These are a few of the major animals from the Jurassic period."
     puts "Select one to learn a fun fact!"
     PrehistoricLife::Scraper.jurassic_scraper
+    input = gets.strip 
+    PrehistoricLife::Creature.all.each.with_index do |creature, index|
+      index +=1 
+      if input.to_i == index 
+        creature.roar 
+        creature.fun_fact 
+      end
+    end
+    
   end
     
   def show_cretaceous_creatures
      puts "These are a few of the major animals from the Cretaceous period." 
      puts "Select one to learn a fun fact!"
      PrehistoricLife::Scraper.cretaceous_scraper
+     input = gets.strip 
+     PrehistoricLife::Creature.all.each.with_index do |creature, index|
+      index +=1 
+      if input.to_i == index 
+        creature.roar 
+        creature.fun_fact 
+      end 
+    end 
+     
   end 
-
 end 
 
  

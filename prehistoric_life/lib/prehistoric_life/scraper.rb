@@ -28,6 +28,7 @@ class PrehistoricLife::Scraper
     doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
       name = type.text 
       puts "#{index}. #{name}" 
+       @dino = PrehistoricLife::Creature.new(name)
     end 
   end   
     
@@ -36,6 +37,7 @@ class PrehistoricLife::Scraper
     doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
     name = type.text 
     puts "#{index}. #{name}"  
+     @dino = PrehistoricLife::Creature.new(name)
     end 
   end 
   

@@ -26,69 +26,12 @@ class PrehistoricLife::Creature
   
   
   def fun_fact
-    
-  
-    case @name 
-      when "Eoraptor"
-        
-        doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
-        fact = doc.css("div.mw-content-ltr.mw-content-text p") 
-        binding.pry 
-        puts fact.text 
-      
-     #######stuck here, trying to extract url 
-      
-      when "Procompsognathus"
-        puts "I eat meat and Im g onna show you a fun fact."
-        
-      when "Coelophysis"
-        
-      when "Shonisaurus"
-      
-      when "Saltopus"
-      
-      when "Stegosaurus"
-        
-      when "Brachiosaurus"
-        
-      when "Fabrosaurus"
-        
-      when "Liopleurodon"
-        
-      when "Allosaurus"
-        
-      when "Tyrannotitan"
-        
-      when "Aardonyx"
-      
-      when "Apatosaurus"
-      
-      when "Tyrannosaurus"
-        
-      when "Brachiosaurus"
-        
-      when "Parasaurolophus"
-        
-      when "Oviraptor"
-        
-      when "Spinosaurus"
-        
-      when "Therizinosaurus"
-        
-      when "Ankylosaurus"
-      
-      when "Styracosaurus"
-      
-        
-      end 
-    
+     
+    doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
+    fact = doc.css("div.mw-content-ltr.mw-content-text p") 
+    puts fact.text 
   end 
     
-  
-  def diet 
-    
-  end 
-  
-  
+
 end 
  
