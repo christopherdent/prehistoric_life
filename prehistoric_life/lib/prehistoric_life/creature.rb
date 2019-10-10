@@ -29,7 +29,11 @@ class PrehistoricLife::Creature
      
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
     fact = doc.css("div.mw-content-ltr.mw-content-text p") 
-    puts fact.text 
+    puts fact.text.chomp
+    #fact.text.to_s.split(".")    breaks the fact into an array.
+     
+    
+    
   end 
     
 
