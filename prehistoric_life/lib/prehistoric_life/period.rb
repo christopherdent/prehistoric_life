@@ -3,14 +3,19 @@ require 'open-uri'
 require 'nokogiri'
 
 class PrehistoricLife::Period
-  attr_accessor :name, :years 
+  attr_accessor :name, :years, :dinosaurs  
   
   @@all = []
   
+  
+  
   def initialize(name)
     @name = name 
+    @dinosaurs = []
     save 
   end 
+  
+  
   
   def self.all
     @@all 

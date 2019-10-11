@@ -3,7 +3,7 @@ require 'pry'
 
 
 class PrehistoricLife::Creature
-  attr_accessor :name, :type, :diet 
+  attr_accessor :name, :type, :diet, :fun_fact  
   
   @@all = [] 
   def initialize(name)

@@ -1,6 +1,4 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
+
 
 #period wont be scraped its just 3 things.  Animal will be scraped.  
 
@@ -46,7 +44,10 @@ class PrehistoricLife::Scraper
     @dino 
   end 
  
-    
+  def fact 
+     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
+    fact = doc.css("div.mw-content-ltr.mw-content-text p") 
+  end 
   
 end 
 
