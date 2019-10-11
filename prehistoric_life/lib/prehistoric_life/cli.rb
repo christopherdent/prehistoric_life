@@ -1,6 +1,6 @@
 
 class PrehistoricLife::CLI
-  attr_accessor :creature 
+  attr_accessor :creature , :period 
 
   def initialize
     @creature = creature 
@@ -9,6 +9,9 @@ class PrehistoricLife::CLI
   def call 
      puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!"
      puts "You'll select an animal by geological period and learn a fun fact about that animal."
+     PrehistoricLife::Period.new("Triassic")
+     PrehistoricLife::Period.new("Jurassic")
+     PrehistoricLife::Period.new("Cretaceous")
      get_period
      #going to want a method like def get_period.
      #Then going to want to get the animals... get_animals(period)
@@ -17,9 +20,9 @@ class PrehistoricLife::CLI
   end 
 
   def get_period 
-   triassic = PrehistoricLife::Period.new("Triassic")
-   jurassic = PrehistoricLife::Period.new("Jurassic")
-   cretaceous = PrehistoricLife::Period.new("Cretaceous")
+   #triassic = PrehistoricLife::Period.new("Triassic")
+   #jurassic = PrehistoricLife::Period.new("Jurassic")
+   #cretaceous = PrehistoricLife::Period.new("Cretaceous")
     #@periods = ["Triassic (250-206 million years ago)", "Jurassic (206-144 million years ago)", "Cretaceous (144-65 million years ago)"]
     @periods = PrehistoricLife::Period.all  
       
@@ -54,6 +57,7 @@ class PrehistoricLife::CLI
       if input.to_i == index 
         creature.roar 
         creature.fun_fact 
+        puts "This is blue".colorize(:blue)
       end 
     end
     
