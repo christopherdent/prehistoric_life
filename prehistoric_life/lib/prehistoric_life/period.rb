@@ -1,7 +1,3 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
-
 class PrehistoricLife::Period
   attr_accessor :name, :years, :dinosaurs  
   

@@ -1,9 +1,7 @@
-
-
-#period wont be scraped its just 3 things.  Animal will be scraped.  
-
 class PrehistoricLife::Scraper
   attr_accessor :creature 
+  
+  
   
   def initialize
     @creature = creature 
@@ -16,14 +14,14 @@ class PrehistoricLife::Scraper
     name = type.text 
     puts "#{index}. #{name}"
       @dino = PrehistoricLife::Creature.new(name) #<-- this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name.  maybe so i could do creaturename.fun_fact 
-    #the instance variable above allows us to use .roar (and other creature instance methods)
-    #if they select 1. eoraptor they will get more info about the selecteed object / creature.  
-    #end 
+        #the instance variable above allows us to use .roar (and other creature instance methods)
+        #if they select 1. eoraptor they will get more info about the selecteed object / creature.  
+        #end 
    
    end 
   
   end
- 
+
   
   def self.jurassic_scraper
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Jurassic"))
@@ -43,18 +41,19 @@ class PrehistoricLife::Scraper
      @dino = PrehistoricLife::Creature.new(name)
     end 
   end 
-  
+   
    
   def self.dino 
     @dino 
   end 
+
  
-  #def fact(name) 
-  # doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{PrehistoricLife::Creature.new(name)}"))
-  # fact = doc.css("div.mw-content-ltr.mw-content-text p") 
-  #  puts fact.text.chomp
-  #end 
-  
+  def fact(name)
+    doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{name}"))
+    fact = doc.css("div.mw-content-ltr.mw-content-text p") 
+    puts fact.text.chomp.colorize(:green)
+  end 
+   
 end 
 
 
