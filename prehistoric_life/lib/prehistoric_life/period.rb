@@ -1,17 +1,16 @@
 class PrehistoricLife::Period
-  attr_accessor :name, :years, :dinosaurs  
+  attr_accessor :name, :dinosaurs, :years   
   
   @@all = []
   
   
   
-  def initialize(name)
+  def initialize(name, years)
     @name = name 
+    @years = years
     @dinosaurs = []
     save 
   end 
-  
-  
   
   def self.all
     @@all 
@@ -21,17 +20,5 @@ class PrehistoricLife::Period
     @@all << self 
   end 
 
-  def years
-  
-    if self.name == "Triassic"
-    "250-206 million years ago"
-    elsif self.name == "Jurassic"
-    "206-144 million years ago"
-    elsif self.name == "Cretaceous"
-    "144-65 million years ago"
-    
-  end 
-end 
-    
   
 end 
