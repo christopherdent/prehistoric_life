@@ -57,6 +57,7 @@ class PrehistoricLife::CLI
     puts "These are a few of the major animals from the Triassic period."  
     puts "Select one to learn a fun fact!"
     PrehistoricLife::Scraper.triassic_scraper
+    puts "Or type Q to quit."
     input = gets.strip 
     PrehistoricLife::Creature.all.each.with_index do |creature, index|
       index +=1 
@@ -64,6 +65,8 @@ class PrehistoricLife::CLI
         creature.roar 
         creature.fun_fact 
         get_period
+        elsif input == "Q" or input == "q"
+          close 
       end 
     end
   end 
@@ -100,7 +103,9 @@ class PrehistoricLife::CLI
      
   end
   
- 
+ def close 
+   exit 
+ end 
   
   
   
