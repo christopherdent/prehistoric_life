@@ -17,16 +17,12 @@ class PrehistoricLife::CLI
      puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!".colorize(:yellow)
      dino_art 
      puts "You'll select an animal by geological period and learn a fun fact about that animal.".colorize(:blue)
-     PrehistoricLife::Period.new("Triassic", "250-206 million years ago")
-     PrehistoricLife::Period.new("Jurassic", "206-144 million years ago")
-     PrehistoricLife::Period.new("Cretaceous", "144-65 million years ago")
-     get_period
+     PrehistoricLife::Period.period_selector
+     @periods = PrehistoricLife::Period.all 
+     list_period
   end 
 
-  def get_period 
-    @periods = PrehistoricLife::Period.all 
-    list_period
-  end 
+
   
   def list_period 
     puts "Please choose your time period:"
@@ -50,7 +46,7 @@ class PrehistoricLife::CLI
       close 
     else 
         puts "Please try again."
-      get_period
+      list_period
     end
   end 
 
@@ -72,7 +68,8 @@ class PrehistoricLife::CLI
       if input.to_i == index 
         creature.roar 
         creature.fun_fact 
-        get_period
+        list_period
+        #PrehistoricLife::Period.learn_more
         elsif input == "Q" or input == "q"
           close  
            
@@ -80,66 +77,7 @@ class PrehistoricLife::CLI
     end 
   end
 
-=begin
 
-  def show_triassic_creatures
-    puts "These are a few of the major animals from the Triassic period."  
-    puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.triassic_scraper
-    puts "
-    Or type Q to quit."
-    input = gets.strip 
-    PrehistoricLife::Creature.all.each.with_index do |creature, index|
-      index +=1 
-      if input.to_i == index 
-        creature.roar 
-        creature.fun_fact 
-        get_period
-        elsif input == "Q" or input == "q"
-          close  
-           
-      end 
-    end
-  end 
-  
-  def show_jurassic_creatures 
-    puts "These are a few of the major animals from the Jurassic period."
-    puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.jurassic_scraper
-    puts "
-    Or type Q to quit."
-    input = gets.strip 
-    PrehistoricLife::Creature.all.each.with_index do |creature, index|
-      index +=1 
-      if input.to_i == index 
-        creature.roar 
-        creature.fun_fact 
-         get_period
-        elsif input == "Q" or input == "q"
-          close  
-      end
-    end
-  end
-    
-  def show_cretaceous_creatures
-     puts "These are a few of the major animals from the Cretaceous period." 
-     puts "Select one to learn a fun fact!"
-     PrehistoricLife::Scraper.cretaceous_scraper
-     puts "
-      Or type Q to quit."
-     input = gets.strip 
-     PrehistoricLife::Creature.all.each.with_index do |creature, index|
-      index +=1 
-      if input.to_i == index 
-        creature.roar 
-        creature.fun_fact
-         get_period
-          elsif input == "Q" or input == "q"
-          close 
-      end 
-    end 
-  end
-=end 
 
 
  def close 
