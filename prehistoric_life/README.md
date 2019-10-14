@@ -1,8 +1,6 @@
 # PrehistoricLife
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prehistoric_life`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Prehistoric Life: Creatures of the Mesozoic!  This program is a simple educational tool that allows the user to browse some of the important animals from each period in the Mesozoic era, better known as the age of the dinosaurs!
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Change directory (cd) into the program folder (prehistoric_life).  Run "bundle install" and then bin/prehistoric_life to run the program.  
 
 ## Development
 

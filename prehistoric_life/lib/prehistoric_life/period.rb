@@ -8,16 +8,12 @@ class PrehistoricLife::Period
   def initialize(name, years)
     @name = name 
     @years = years
-    @dinosaurs = []
-    save 
+    @@all << self 
+      
   end 
   
   def self.all
     @@all 
-  end 
-
-  def save 
-    @@all << self 
   end 
 
   

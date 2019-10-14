@@ -1,9 +1,7 @@
 class PrehistoricLife::CLI
-  attr_accessor :creature, :period 
+  
 
   def initialize
-    @creature = creature
-    @period = period 
   end 
 
  def dino_art
@@ -38,28 +36,51 @@ class PrehistoricLife::CLI
       end 
     puts "
     Or type Q to quit."
-    period = gets.strip
-    if period == "Triassic" || period == "1"
-        show_triassic_creatures
-    elsif period == "Jurassic" || period == "2"
-        show_jurassic_creatures
-    elsif period == "Cretaceous" || period == "3"
-        show_cretaceous_creatures
+    input = gets.strip
+    if input == "1"
+       period = "Triassic"
+       show_creatures(period)
+    elsif input == "2"
+        period = "Jurassic"
+        show_creatures(period)
+    elsif input == "3"
+        period == "Cretaceous"
+        show_creatures(period)
     elsif "Q" || "q"
       close 
     else 
         puts "Please try again."
-    get_period
+      get_period
     end
   end 
 
-=begin 
+  
   def show_creatures(period)
-    puts "These are a few of the major animals from the #{period} period.  This period was {period.years} ago."
+    puts "These are a few of the major animals from the #{period} period."  
     puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.{period}_scraper
-  end 
-=end 
+    if period == "Triassic" 
+      PrehistoricLife::Scraper.triassic_scraper
+    elsif period == "Jurassic"
+      PrehistoricLife::Scraper.jurassic_scraper
+    elsif period == "Cretaceous"
+      PrehistoricLife::Scraper.cretaceous_scraper
+    end 
+    puts "
+    Or type Q to quit."
+    input = gets.strip 
+    PrehistoricLife::Creature.all.each.with_index do |creature, index|
+      if input.to_i == index 
+        creature.roar 
+        creature.fun_fact 
+        get_period
+        elsif input == "Q" or input == "q"
+          close  
+           
+      end 
+    end 
+  end
+
+=begin
 
   def show_triassic_creatures
     puts "These are a few of the major animals from the Triassic period."  
@@ -75,11 +96,12 @@ class PrehistoricLife::CLI
         creature.fun_fact 
         get_period
         elsif input == "Q" or input == "q"
-          close 
+          close  
+           
       end 
     end
   end 
-    
+  
   def show_jurassic_creatures 
     puts "These are a few of the major animals from the Jurassic period."
     puts "Select one to learn a fun fact!"
@@ -97,7 +119,6 @@ class PrehistoricLife::CLI
           close  
       end
     end
-    
   end
     
   def show_cretaceous_creatures
@@ -117,10 +138,10 @@ class PrehistoricLife::CLI
           close 
       end 
     end 
-     
-     
   end
-  
+=end 
+
+
  def close 
    exit 
  end 

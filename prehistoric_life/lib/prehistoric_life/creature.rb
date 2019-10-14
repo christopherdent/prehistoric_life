@@ -1,9 +1,10 @@
 class PrehistoricLife::Creature
-  attr_accessor :name, :type, :diet, :fun_fact  
+  attr_accessor :name, :type, :fun_fact, :period  
   
   @@all = [] 
-  def initialize(name)
-    @name = name 
+  def initialize(name, period)
+    @name = name
+    @period = period
     save 
   end 
   
