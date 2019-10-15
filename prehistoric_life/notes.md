@@ -42,3 +42,7 @@ from CLI line 16
    #jurassic = PrehistoricLife::Period.new("Jurassic")
    #cretaceous = PrehistoricLife::Period.new("Cretaceous")
     #@periods = ["Triassic (250-206 million years ago)", "Jurassic (206-144 million years ago)", "Cretaceous (144-65 million years ago)"]
+    
+    
+    
+  learn more:  this was tricky!  #if they wnt to learn more, great.  the if theyre learning more from the same period, the dinos are in the array.  if not, they need to be added to the array.  I think we need to add the years attribute so it can check if dinos from that period are already in there.  If they're not then the scraper must be run.  

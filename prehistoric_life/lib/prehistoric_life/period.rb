@@ -9,7 +9,7 @@ class PrehistoricLife::Period
   
   def initialize(name)
     @name = name 
-    @dinosaurs = []
+   # @dinosaurs = []
     save 
   end 
   

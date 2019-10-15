@@ -24,7 +24,7 @@ class PrehistoricLife::CLI
   def self.show_triassic_creatures
     puts "These are a few of the major animals from the Triassic period."  
     puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.triassic_scraper  #you need to link the index from this to the next line somehow 
+    PrehistoricLife::Scraper.triassic_scraper 
     PrehistoricLife::Creature.show_creatures
     
   end 
