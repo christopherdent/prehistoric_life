@@ -35,14 +35,24 @@ class PrehistoricLife::Creature
   
   
   def fun_fact
-  #PrehistoricLife::Scraper.new.fact(name) 
-    
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
     fact = doc.css("div.mw-content-ltr.mw-content-text p") 
     puts fact.text.chomp.colorize(:green)
   
   end 
     
+  def self.show_creatures
+    input = gets.strip 
+    @@all.each.with_index do |creature, index|
+      index +=1 
+      if input.to_i == index 
+        creature.roar 
+        creature.fun_fact 
+        
+      end 
+    end 
+  end
+  
 
 end 
  

@@ -25,3 +25,20 @@ OR  have creatures initialize as objects.  Then you can see their diet and the f
       CLI class will welcome to an app 
       
 3.  using dino.wikia.org 
+4.  
+
+
+
+
+
+from CLI line 16
+   #going to want a method like def get_period.
+     #Then going to want to get the animals... get_animals(period)
+     #Then list the animals 
+     #Then ask user to choose an animal 
+     
+     from CLI 20
+        #triassic = PrehistoricLife::Period.new("Triassic")
+   #jurassic = PrehistoricLife::Period.new("Jurassic")
+   #cretaceous = PrehistoricLife::Period.new("Cretaceous")
+    #@periods = ["Triassic (250-206 million years ago)", "Jurassic (206-144 million years ago)", "Cretaceous (144-65 million years ago)"]
