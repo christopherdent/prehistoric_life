@@ -7,23 +7,28 @@ class PrehistoricLife::Period
   
   @@all = []
   
-  
-  
   def initialize(name)
     @name = name 
     @dinosaurs = []
     save 
   end 
   
+  def self.periods
+     self.new("Triassic")
+     self.new("Jurassic")
+     self.new("Cretaceous")
+    
+  end 
   
+  def save 
+    @@all << self 
+  end 
   
   def self.all
     @@all 
   end 
 
-  def save 
-    @@all << self 
-  end 
+
 
   def years
   

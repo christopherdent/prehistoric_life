@@ -6,12 +6,12 @@ class PrehistoricLife::CLI
     @creature = creature 
   end 
 
-  def call 
-     puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!"
+  def call
+  
+     puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!".colorize(:yellow)
+     PrehistoricLife::Creature.dino_art
      puts "You'll select an animal by geological period and learn a fun fact about that animal."
-     PrehistoricLife::Period.new("Triassic")
-     PrehistoricLife::Period.new("Jurassic")
-     PrehistoricLife::Period.new("Cretaceous")
+     PrehistoricLife::Period.periods
      get_period
      #going to want a method like def get_period.
      #Then going to want to get the animals... get_animals(period)
@@ -39,7 +39,9 @@ class PrehistoricLife::CLI
       elsif period == "Jurassic" || period == "2"
         show_jurassic_creatures 
       elsif period == "Cretaceous" || period == "3"
-        show_cretaceous_creatures 
+        show_cretaceous_creatures
+      elsif period == "Q" || period == "q"
+        exit
       else 
         puts "Please try again."
         get_period

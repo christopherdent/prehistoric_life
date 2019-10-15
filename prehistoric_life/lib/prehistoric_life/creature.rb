@@ -8,9 +8,18 @@ class PrehistoricLife::Creature
   @@all = [] 
   def initialize(name)
     @name = name 
-     
     save 
+  end
+  
+  def self.dino_art
+    puts           "                 __        "
+    puts           "                / _)       "
+    puts           "       _.----._/ /         "
+    puts           "      /         /          "
+    puts           "    _/ (  | (  |           "
+    puts           "  /__.-'|_|--|_|           "
   end 
+  
   
   def self.all
     @@all 
