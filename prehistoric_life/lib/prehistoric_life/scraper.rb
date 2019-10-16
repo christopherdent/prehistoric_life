@@ -3,10 +3,11 @@
 #period wont be scraped its just 3 things.  Animal will be scraped.  
 
 class PrehistoricLife::Scraper
-  attr_accessor :creature 
+  attr_accessor :creature, :fact 
   
   def initialize
     @creature = creature 
+    @fact = fact 
   end 
   
   def self.triassic_scraper
@@ -42,12 +43,11 @@ class PrehistoricLife::Scraper
     @dino 
   end 
  
-  #def fact(name) 
-  # doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{PrehistoricLife::Creature.new(name)}"))
-  # fact = doc.css("div.mw-content-ltr.mw-content-text p") 
-  #  puts fact.text.chomp
-  #end 
-  
+  def self.fact
+    input = PrehistoricLife::Creature.current_input
+    doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{input}"))
+    puts doc.css("div.mw-content-ltr.mw-content-text p").text.chomp.colorize(:green)
+  end  
 end 
 
 

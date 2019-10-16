@@ -1,8 +1,7 @@
   
-require 'pry'
-
 class PrehistoricLife::Creature
-  attr_accessor :name, :period, :fun_fact  
+  attr_accessor :period, :fun_fact, :name 
+  
   
   @@all = [] 
   def initialize(name, period)
@@ -20,30 +19,29 @@ class PrehistoricLife::Creature
     puts           "  /__.-'|_|--|_|           "
   end 
   
-   
+ 
   def self.all
     @@all 
-  end 
-
+  end
+  
   def save 
     @@all << self 
   end 
   
+
   def roar 
     puts "#{self.name} goes ROAR!!!!".colorize(:black).on_white.underline
   end 
-  
-  
+
   def fun_fact
-    doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{self.name}"))
-    fact = doc.css("div.mw-content-ltr.mw-content-text p") 
-    puts fact.text.chomp.colorize(:green)
+    PrehistoricLife::Scraper.fact
   end 
-   
+
   def self.show_creatures
     input = gets.strip 
     @@all.each.with_index do |creature, index|
-      index +=1 
+      index +=1
+      @@creature = creature.name
       if input.to_i == index 
         creature.roar 
         creature.fun_fact 
@@ -67,8 +65,9 @@ class PrehistoricLife::Creature
     end
   end 
 
-
-   
+  def self.current_input
+    @@creature
+  end 
   
 end 
  
