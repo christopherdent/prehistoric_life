@@ -52,4 +52,6 @@ from CLI line 16
     #if they select 1. eoraptor they will get more info about the selecteed object / creature.  
     #end 
     
-     #<-- Creature.new this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name.  
+     #<-- Creature.new this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name. 
+     
+         #@@all.clear   #note that clearing the @@all array here solves problem of duplicate objects but doesn't solve problem of saving the objects.

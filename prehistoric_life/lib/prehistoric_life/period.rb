@@ -1,7 +1,3 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
-
 class PrehistoricLife::Period
   attr_accessor :name, :years, :dinosaurs  
   
@@ -9,7 +5,7 @@ class PrehistoricLife::Period
   
   def initialize(name)
     @name = name 
-   # @dinosaurs = []
+    @dinosaurs = []
     save 
   end 
   
@@ -59,6 +55,14 @@ class PrehistoricLife::Period
       end
   end 
     
+  def self.learn_more
+    input = PrehistoricLife::Creature.current_input
+    
+    @@all.each do |period|
+    binding.pry 
+  end 
+end 
+  
     
     
   

@@ -50,14 +50,18 @@ class PrehistoricLife::Creature
     end 
   end
   
-  def self.learn_more #a rerun of show creatures 
+  def self.learn_more 
+     
     puts "
     Would you like to learn more?".colorize(:yellow) 
     puts "     Enter yes to learn more or no to quit."
     input = gets.strip.downcase 
     if input == "yes" || input == "y"  
-      @@all.clear   #note that clearing the @@all array here solves problem of duplicate objects but doesn't solve problem of saving the objects.
-      PrehistoricLife::CLI.get_period
+      #need something here that will trigger the fact scraper, by selecting a name in a Period array.  
+      PrehistoricLife::Period.learn_more
+      
+      #@@all.clear   #note that clearing the @@all array here solves problem of duplicate objects but doesn't solve problem of saving the objects.
+      #PrehistoricLife::CLI.get_period
     elsif input == "no" || input == "n"
       exit
     else 
