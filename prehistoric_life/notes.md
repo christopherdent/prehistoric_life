@@ -46,3 +46,10 @@ from CLI line 16
     
     
   learn more:  this was tricky!  #if they wnt to learn more, great.  the if theyre learning more from the same period, the dinos are in the array.  if not, they need to be added to the array.  I think we need to add the years attribute so it can check if dinos from that period are already in there.  If they're not then the scraper must be run.  
+  
+  maybe so i could do creaturename.fun_fact 
+    #the instance variable above, @dino, allows us to use .roar (and other creature instance methods)
+    #if they select 1. eoraptor they will get more info about the selecteed object / creature.  
+    #end 
+    
+     #<-- Creature.new this code works to create objects out of each new creature. it also assigns a variable name equal to the creatures name.  
