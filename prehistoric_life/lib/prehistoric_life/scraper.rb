@@ -10,23 +10,20 @@ class PrehistoricLife::Scraper
   end 
   
   def self.triassic_scraper
-    
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Triassic"))
-    doc.css('li.category-page__member').each.with_index(1) do |type, index|
-    name = type.text.strip 
+    doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
+    name = type.text 
     puts "#{index}. #{name}"
-      @dino = PrehistoricLife::Creature.new(name, period = "Triassic")
-   
+    @dino = PrehistoricLife::Creature.new(name, period = "Triassic") 
    end 
-  
   end
  
   
   def self.jurassic_scraper
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Jurassic"))
       
-    doc.css('li.category-page__member').each.with_index(1) do |type, index|
-    name = type.text.strip 
+    doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
+      name = type.text 
       puts "#{index}. #{name}" 
        @dino = PrehistoricLife::Creature.new(name, period = "Jurassic")
     end 
@@ -34,13 +31,12 @@ class PrehistoricLife::Scraper
  
   def self.cretaceous_scraper 
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Cretaceous"))
-    doc.css('li.category-page__member').each.with_index(1) do |type, index|
-    name = type.text.strip 
+    doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
+    name = type.text 
     puts "#{index}. #{name}"  
      @dino = PrehistoricLife::Creature.new(name, period = "Cretaceous")
     end 
   end 
-  
    
   def self.dino 
     @dino 

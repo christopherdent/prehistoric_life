@@ -30,7 +30,7 @@ class PrehistoricLife::Creature
   end 
   
   def roar 
-    puts "#{self.name} goes Roar!"
+    puts "#{self.name} goes ROAR!!!!".colorize(:black).on_white.underline
   end 
   
   
@@ -53,13 +53,17 @@ class PrehistoricLife::Creature
   end
   
   def self.learn_more #a rerun of show creatures 
-    puts "Would you like to learn more?  Type Y for yes or Q to quit."
-    input = gets.strip 
-    if input == "y" || input == "Y"  
+    puts "
+    Would you like to learn more?".colorize(:yellow) 
+    puts "     Enter yes to learn more or no to quit."
+    input = gets.strip.downcase 
+    if input == "yes" || input == "y"  
       @@all.clear   #note that clearing the @@all array here solves problem of duplicate objects but doesn't solve problem of saving the objects.
       PrehistoricLife::CLI.get_period
-    elsif input == "q" || input == "Q"
-      exit 
+    elsif input == "no" || input == "n"
+      exit
+    else 
+      self.learn_more 
     end
   end 
 
