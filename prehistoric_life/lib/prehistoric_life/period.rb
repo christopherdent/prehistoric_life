@@ -33,7 +33,7 @@ class PrehistoricLife::Period
    end 
   end 
     
-  def self.get_period
+   def self.get_period
       @@all.each_with_index do |period, index|
         index += 1
         puts "#{index.to_i}. #{period.name} (#{period.years})"
@@ -54,15 +54,15 @@ class PrehistoricLife::Period
         get_period
       end
   end 
-    
-  def self.learn_more
-    input = PrehistoricLife::Creature.current_input
-    
-    @@all.each do |period|
-    binding.pry 
+ 
+  def dino_array
+    binding.pry
+    all.map do |age|
+      @age = age 
+      age.dinosaurs
+      age.name  
+    end 
   end 
-end 
-  
     
     
   
