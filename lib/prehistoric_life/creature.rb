@@ -11,12 +11,12 @@ class PrehistoricLife::Creature
   end
   
   def self.dino_art
-    puts           "                 __        "
-    puts           "                / _)       "
-    puts           "       _.----._/ /         "
-    puts           "      /         /          "
-    puts           "    _/ (  | (  |           "
-    puts           "  /__.-'|_|--|_|           "
+    puts           "                 __        ".colorize(:light_green)
+    puts           "                / _)       ".colorize(:light_green)
+    puts           "       _.----._/ /         ".colorize(:light_green)
+    puts           "      /         /          ".colorize(:light_green)
+    puts           "    _/ (  | (  |           ".colorize(:light_green)
+    puts           "  /__.-'|_|--|_|           ".colorize(:light_green)
   end 
   
  
