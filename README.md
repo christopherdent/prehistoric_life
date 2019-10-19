@@ -1,8 +1,6 @@
-# PrehistoricLife
+# PrehistoricLife - Creatures of the Mesozoic
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prehistoric_life`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Prehistoric Life - Creatures of the Mesozoic is an educational Ruby app that allows a user to dive into a prehistoric era and learn about life on Earth during that era.  
 
 ## Installation
 
@@ -19,10 +17,14 @@ And then execute:
 Or install it yourself as:
 
     $ gem install prehistoric_life
+    
+From the command line, navigte to the "prehistoric_life" directory and run bundle install.  Then run bin/prehistoric_life.  
 
 ## Usage
 
-TODO: Write usage instructions here
+1)	Select one of the presented eras.  
+2)	Select an animal from the list presented to learn a fun fact about that animal. 
+3)  Exit the program or choose another era.  
 
 ## Development
 
