@@ -40,41 +40,18 @@ class PrehistoricLife::Creature
 
   def self.list_creatures(period)
     
-    list = all.select { |creature| period == creature.period } 
-    ##all from the correct period are in list 
-    
-    list.each.with_index(1) do |creature, index|
-      #@index = index 
-      #@creature = creature 
-      @@creature = creature.name  
-      list.length.times do puts "#{index}. #{creature.name}"
-      
-      end
-     
-      input = gets.strip 
-      if input.to_i == @index 
-        @creature.roar 
-        @creature.fun_fact 
-        learn_more
-        
+    @a = all.select {|creature| creature.period == period }  
+    @a.each.with_index(1) do |creature, index|
+      puts "#{index}. #{creature.name}"
     end 
+    select_creatures(period) 
   end 
-       
-    
 
-  
-=begin   
-  def self.choose_creature(period)
-    input = gets.strip 
-    if input.to_i == @index 
- 
 
-  def self.show_creatures(period)
-    #binding.pry 
-    input = gets.strip 
-    @@all.each.with_index do |creature, index|
+  def self.select_creatures(period)
+     input = gets.strip 
+    @a.each.with_index do |creature, index|
       index +=1
-      puts "#{index}. #{creature.name}" 
       @@creature = creature.name
       if input.to_i == index 
         creature.roar 
@@ -83,9 +60,7 @@ class PrehistoricLife::Creature
       end 
     end 
   end
-=end     
 
- 
   
   def self.learn_more 
     puts "
