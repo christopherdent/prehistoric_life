@@ -7,16 +7,8 @@ class PrehistoricLife::Period
     @name = name 
     @dinosaurs = []
     @@all << self 
-    
   end 
   
-=begin   
-  def self.periods
-     self.new("Triassic")
-     self.new("Jurassic")
-     self.new("Cretaceous")
-  end 
-=end 
 
   def self.all
     @@all 
@@ -42,11 +34,11 @@ class PrehistoricLife::Period
     
       period = gets.strip
     
-      if period == "Triassic" || period == "1"
+      if period.downcase == "triassic" || period == "1"
         PrehistoricLife::CLI.show_creatures("Triassic")
-      elsif period == "Jurassic" || period == "2"
+      elsif period.downcase == "jurassic" || period == "2"
         PrehistoricLife::CLI.show_creatures("Jurassic")
-      elsif period == "Cretaceous" || period == "3"
+      elsif period.downcase == "cretaceous" || period == "3"
         PrehistoricLife::CLI.show_creatures("Cretaceous")
       elsif period == "Q" || period == "q"
         exit

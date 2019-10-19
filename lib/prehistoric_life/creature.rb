@@ -53,10 +53,13 @@ class PrehistoricLife::Creature
     @a.each.with_index do |creature, index|
       index +=1
       @@creature = creature.name
-      if input.to_i == index 
+      if input.to_i == index || input.downcase == creature.name.downcase
         creature.roar 
         creature.fun_fact 
         learn_more
+      else 
+        puts "Invalid selection.  Please select from the list below."
+        list_creatures(period)
       end 
     end 
   end
