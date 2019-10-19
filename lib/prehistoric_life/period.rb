@@ -42,7 +42,7 @@ class PrehistoricLife::Period
     
       period = gets.strip
     
-      if period == "1" || period == "Triassic"
+      if period == "Triassic" || period == "1"
         PrehistoricLife::CLI.show_creatures("Triassic")
       elsif period == "Jurassic" || period == "2"
         PrehistoricLife::CLI.show_creatures("Jurassic")
@@ -56,16 +56,6 @@ class PrehistoricLife::Period
       end
   end 
   
-=begin 
-#  def dino_array
-     
-    all.map do |age|
-      @age = age 
-      age.dinosaurs
-      age.name  
-    end 
-=end 
-    
-    
+
   
 end 

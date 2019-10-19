@@ -38,43 +38,35 @@ class PrehistoricLife::Creature
   end 
 
 
-=begin  
-  def self.show_creatures(period)
-    PrehistoricLife::Period.all.each do |age|
-        all.each do |animal|
-          @creature = animal 
-          @@creature = animal.name #this is  to capture the animals name to interpolate into funfact url
-          if animal.period == period && age.name == period 
-            @dino_array = age.dinosaurs 
-            @dino_array << animal unless @dino_array.include? animal
-          end
-        end
-     end  
-    @dino_array.each.with_index(1) do |dino, index|
-      @index = index
-      puts "#{index}. #{dino.name}" 
-    end 
+  def self.list_creatures(period)
     
-     input = gets.strip 
-     if input.to_i == @index 
+    list = all.select { |creature| period == creature.period } 
+    ##all from the correct period are in list 
+    
+    list.each.with_index(1) do |creature, index|
+      #@index = index 
+      #@creature = creature 
+      @@creature = creature.name  
+      list.length.times do puts "#{index}. #{creature.name}"
+      
+      end
+     
+      input = gets.strip 
+      if input.to_i == @index 
         @creature.roar 
         @creature.fun_fact 
         learn_more
-      end   
-end 
-
-
-=end     
-    
-  def self.list_creatures(period)
-    
-    PrehistoricLife::Period.all.each.with_index(1) do |era| 
-      if era.name == period   #if the period objects name is the same as the period argument/input... 
-      
-      end 
+        
     end 
   end 
+       
     
+
+  
+=begin   
+  def self.choose_creature(period)
+    input = gets.strip 
+    if input.to_i == @index 
  
 
   def self.show_creatures(period)
@@ -91,7 +83,7 @@ end
       end 
     end 
   end
-    
+=end     
 
  
   
