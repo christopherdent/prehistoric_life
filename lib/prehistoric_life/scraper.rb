@@ -11,7 +11,7 @@ class PrehistoricLife::Scraper
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/Category:Triassic"))
     doc.css("figcaption.category-page__trending-page-title").each.with_index(1) do |type, index|
       name = type.text 
-      puts "#{index}. #{name}"  #this is going to happen in get creature.  You'll also populate the period.dinosaurs array from get creature.  
+      #puts "#{index}. #{name}"  #this is going to happen in get creature.  You'll also populate the period.dinosaurs array from get creature.  
       @dino = PrehistoricLife::Creature.new(name, period = "Triassic") 
       PrehistoricLife::Period.all.each do |age|
           age.dinosaurs << @dino if age.name == period 

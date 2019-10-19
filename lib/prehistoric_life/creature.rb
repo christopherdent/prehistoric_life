@@ -37,7 +37,26 @@ class PrehistoricLife::Creature
     PrehistoricLife::Scraper.fact
   end 
 
-  def self.show_creatures
+  def self.show_creatures(period)
+    
+    all.each do |animal|
+      PrehistoricLife::Period.all.map do |age|
+       
+        if animal.period == period && age.name == period 
+          age.dinosaurs << animal 
+        end 
+    
+     
+       binding.pry
+      # if age.name == period   #if triassic = triassic 
+      
+      @age = age 
+      age.dinosaurs
+      age.name  
+      end 
+    end 
+  end 
+    
     input = gets.strip 
     @@all.each.with_index do |creature, index|
       index +=1

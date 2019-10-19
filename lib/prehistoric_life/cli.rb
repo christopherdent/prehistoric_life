@@ -2,7 +2,10 @@ class PrehistoricLife::CLI
   attr_accessor :creature , :period 
 
   def initialize
-    @creature = creature 
+    @creature = creature
+    PrehistoricLife::Scraper.triassic_scraper 
+    PrehistoricLife::Scraper.jurassic_scraper
+    PrehistoricLife::Scraper.cretaceous_scraper
   end 
 
   def call
@@ -21,30 +24,30 @@ class PrehistoricLife::CLI
   end 
 
 
-  def self.show_triassic_creatures
-    puts "These are a few of the major animals from the Triassic period."  
+  def self.show_creatures(period)
+    puts "These are a few of the major animals from the #{period} Period."  
     puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.triassic_scraper #unless PrehistoricLife::Period.all  
-    PrehistoricLife::Creature.show_creatures
+    #PrehistoricLife::Scraper.triassic_scraper   
+    PrehistoricLife::Creature.show_creatures(period)
     
   end 
-    
+=begin 
   def self.show_jurassic_creatures 
     puts "These are a few of the major animals from the Jurassic period."
     puts "Select one to learn a fun fact!"
-    PrehistoricLife::Scraper.jurassic_scraper
-    PrehistoricLife::Creature.show_creatures
+    #PrehistoricLife::Scraper.jurassic_scraper
+    PrehistoricLife::Creature.show_creatures(period)
     
   end
     
   def self.show_cretaceous_creatures
      puts "These are a few of the major animals from the Cretaceous period." 
      puts "Select one to learn a fun fact!"
-     PrehistoricLife::Scraper.cretaceous_scraper
-     PrehistoricLife::Creature.show_creatures
+     #PrehistoricLife::Scraper.cretaceous_scraper
+     PrehistoricLife::Creature.show_creatures(period)
   end
   
- 
+=end 
 
 end 
 
