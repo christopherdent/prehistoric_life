@@ -57,9 +57,9 @@ class PrehistoricLife::Creature
         creature.roar 
         creature.fun_fact 
         learn_more
-      else 
-        puts "Invalid selection.  Please select from the list below."
-        list_creatures(period)
+      #else 
+       # puts "Invalid selection.  Please select from the list below."
+        #list_creatures(period)
       end 
     end 
   end

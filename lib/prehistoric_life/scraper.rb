@@ -27,7 +27,11 @@ class PrehistoricLife::Scraper
   def self.fact
     input = PrehistoricLife::Creature.current_input
     doc = Nokogiri::HTML(open("https://dino.wikia.org/wiki/#{input}"))
-    puts doc.css("div.mw-content-ltr.mw-content-text p").text.chomp.colorize(:green)
+    
+    string = doc.css("div.mw-content-ltr.mw-content-text p").text.chomp[0..400]
+    string = string.gsub(/\.[^.]*$/, ".")
+    puts string.colorize(:green)
+  
   end  
 end 
 
