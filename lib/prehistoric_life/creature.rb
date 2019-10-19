@@ -38,28 +38,26 @@ class PrehistoricLife::Creature
   end 
 
   def self.show_creatures(period)
-    
-    all.each do |animal|
-      PrehistoricLife::Period.all.map do |age|
-       
+    PrehistoricLife::Period.all.each do |age|
+        all.each do |animal|
         if animal.period == period && age.name == period 
-          age.dinosaurs << animal 
-        end 
-    
-     
-       binding.pry
-      # if age.name == period   #if triassic = triassic 
-      
-      @age = age 
-      age.dinosaurs
-      age.name  
-      end 
+          @dino_array = age.dinosaurs 
+          @dino_array << animal unless @dino_array.include? animal
+        end
+       end
+     end  
+    @dino_array.each.with_index(1) do |dino, index|
+      puts "#{index}. #{dino.name}" 
     end 
+    
+    select_creature
   end 
     
+  def self.select_creature
+  
     input = gets.strip 
-    @@all.each.with_index do |creature, index|
-      index +=1
+    @@all.each.with_index(1) do |creature, index|
+      
       @@creature = creature.name
       if input.to_i == index 
         creature.roar 
@@ -75,7 +73,7 @@ class PrehistoricLife::Creature
     puts "     Enter yes to learn more or no to quit."
     input = gets.strip.downcase 
     if input == "yes" || input == "y"
-      @@all.clear 
+      #@@all.clear 
       PrehistoricLife::CLI.get_period    
     elsif input == "no" || input == "n"
       exit

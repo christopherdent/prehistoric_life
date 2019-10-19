@@ -13,9 +13,9 @@ class PrehistoricLife::Scraper
       name = type.text 
       #puts "#{index}. #{name}"  #this is going to happen in get creature.  You'll also populate the period.dinosaurs array from get creature.  
       @dino = PrehistoricLife::Creature.new(name, period = "Triassic") 
-      PrehistoricLife::Period.all.each do |age|
-          age.dinosaurs << @dino if age.name == period 
-      end 
+     # PrehistoricLife::Period.all.each do |age|
+          #age.dinosaurs << @dino if age.name == period 
+      #end 
     end 
   end 
    

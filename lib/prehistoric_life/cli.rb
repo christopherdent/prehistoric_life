@@ -27,7 +27,7 @@ class PrehistoricLife::CLI
   def self.show_creatures(period)
     puts "These are a few of the major animals from the #{period} Period."  
     puts "Select one to learn a fun fact!"
-    #PrehistoricLife::Scraper.triassic_scraper   
+   
     PrehistoricLife::Creature.show_creatures(period)
     
   end 
