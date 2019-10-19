@@ -37,27 +37,52 @@ class PrehistoricLife::Creature
     PrehistoricLife::Scraper.fact
   end 
 
+
+=begin  
   def self.show_creatures(period)
     PrehistoricLife::Period.all.each do |age|
         all.each do |animal|
-        if animal.period == period && age.name == period 
-          @dino_array = age.dinosaurs 
-          @dino_array << animal unless @dino_array.include? animal
+          @creature = animal 
+          @@creature = animal.name #this is  to capture the animals name to interpolate into funfact url
+          if animal.period == period && age.name == period 
+            @dino_array = age.dinosaurs 
+            @dino_array << animal unless @dino_array.include? animal
+          end
         end
-       end
      end  
     @dino_array.each.with_index(1) do |dino, index|
+      @index = index
       puts "#{index}. #{dino.name}" 
     end 
     
-    select_creature
+     input = gets.strip 
+     if input.to_i == @index 
+        @creature.roar 
+        @creature.fun_fact 
+        learn_more
+      end   
+end 
+
+
+=end     
+    
+  def self.list_creatures(period)
+    
+    PrehistoricLife::Period.all.each.with_index(1) do |era| 
+      if era.name == period   #if the period objects name is the same as the period argument/input... 
+      
+      end 
+    end 
   end 
     
-  def self.select_creature
-  
+ 
+
+  def self.show_creatures(period)
+    #binding.pry 
     input = gets.strip 
-    @@all.each.with_index(1) do |creature, index|
-      
+    @@all.each.with_index do |creature, index|
+      index +=1
+      puts "#{index}. #{creature.name}" 
       @@creature = creature.name
       if input.to_i == index 
         creature.roar 
@@ -66,6 +91,9 @@ class PrehistoricLife::Creature
       end 
     end 
   end
+    
+
+ 
   
   def self.learn_more 
     puts "
@@ -73,7 +101,7 @@ class PrehistoricLife::Creature
     puts "     Enter yes to learn more or no to quit."
     input = gets.strip.downcase 
     if input == "yes" || input == "y"
-      #@@all.clear 
+      
       PrehistoricLife::CLI.get_period    
     elsif input == "no" || input == "n"
       exit

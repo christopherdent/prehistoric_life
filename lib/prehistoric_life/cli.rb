@@ -3,9 +3,12 @@ class PrehistoricLife::CLI
 
   def initialize
     @creature = creature
-    PrehistoricLife::Scraper.triassic_scraper 
-    PrehistoricLife::Scraper.jurassic_scraper
-    PrehistoricLife::Scraper.cretaceous_scraper
+    PrehistoricLife::Period.new("Triassic")
+    PrehistoricLife::Period.new("Jurassic")
+    PrehistoricLife::Period.new("Cretaceous")
+    PrehistoricLife::Scraper.scraper("Triassic") 
+    PrehistoricLife::Scraper.scraper("Jurassic")
+    PrehistoricLife::Scraper.scraper("Cretaceous")
   end 
 
   def call
@@ -13,7 +16,7 @@ class PrehistoricLife::CLI
      puts "Welcome to Prehistoric Life - Creatues of the Mesozoic!".colorize(:green)
      PrehistoricLife::Creature.dino_art
      puts "You'll select an animal by geological period and learn a fun fact about that animal.".colorize(:light_blue)
-     PrehistoricLife::Period.periods
+     #PrehistoricLife::Period.periods
      PrehistoricLife::CLI.get_period
   
   end 
@@ -27,8 +30,8 @@ class PrehistoricLife::CLI
   def self.show_creatures(period)
     puts "These are a few of the major animals from the #{period} Period."  
     puts "Select one to learn a fun fact!"
-   
-    PrehistoricLife::Creature.show_creatures(period)
+    PrehistoricLife::Creature.list_creatures(period)   
+    #PrehistoricLife::Creature.show_creatures(period)
     
   end 
 =begin 

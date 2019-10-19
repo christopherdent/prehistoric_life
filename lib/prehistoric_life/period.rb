@@ -6,19 +6,18 @@ class PrehistoricLife::Period
   def initialize(name)
     @name = name 
     @dinosaurs = []
-    save 
+    @@all << self 
+    
   end 
   
+=begin   
   def self.periods
      self.new("Triassic")
      self.new("Jurassic")
      self.new("Cretaceous")
   end 
-  
-  def save 
-    @@all << self 
-  end 
-  
+=end 
+
   def self.all
     @@all 
   end 
@@ -34,14 +33,16 @@ class PrehistoricLife::Period
   end 
     
    def self.get_period
+     
       @@all.each_with_index do |period, index|
+        
         index += 1
         puts "#{index.to_i}. #{period.name} (#{period.years})"
       end 
     
       period = gets.strip
     
-      if period == "Triassic" || period == "1"
+      if period == "1" || period == "Triassic"
         PrehistoricLife::CLI.show_creatures("Triassic")
       elsif period == "Jurassic" || period == "2"
         PrehistoricLife::CLI.show_creatures("Jurassic")
@@ -54,7 +55,8 @@ class PrehistoricLife::Period
         get_period
       end
   end 
- 
+  
+=begin 
 #  def dino_array
      
     all.map do |age|
@@ -62,7 +64,7 @@ class PrehistoricLife::Period
       age.dinosaurs
       age.name  
     end 
- # end 
+=end 
     
     
   
