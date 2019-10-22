@@ -47,6 +47,13 @@ class PrehistoricLife::Creature
     select_creatures(period) 
   end 
 
+  def self.search(input) 
+    self.all.each do |creature|
+      if creature.name == input 
+        return creature.name
+      end 
+    end
+  end 
 
   def self.select_creatures(period)
      input = gets.strip 
